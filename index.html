@@ -1,150 +1,705 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.1">
-<title>Pete's Tech Help — Honiton</title>
-<style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    background: #f5f7fa;
-    font-family: Georgia, "Times New Roman", serif;
-    color: #1a1a1a;
-    line-height: 1.7;
-    padding: 2rem 1rem;
-  }
-  .letter {
-    max-width: 640px;
-    margin: 2rem auto;
-    background: #fff;
-    padding: 3rem 2.5rem 2.5rem;
-    border-radius: 4px;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
-  }
-  h1 {
-    font-size: 2rem;
-    font-weight: 700;
-    color: #2563eb;
-    letter-spacing: -0.01em;
-    margin-bottom: 0.15rem;
-  }
-  .subhead {
-    font-size: 1.15rem;
-    color: #555;
-    margin-bottom: 1.75rem;
-    font-style: italic;
-  }
-  .intro {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-    padding-bottom: 1.5rem;
-    border-bottom: 1px solid #e5e7eb;
-  }
-  section {
-    margin-bottom: 1.75rem;
-  }
-  h2 {
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: #2563eb;
-    margin-bottom: 0.5rem;
-    text-transform: uppercase;
-    letter-spacing: 0.03em;
-  }
-  ul {
-    list-style: none;
-    padding-left: 0;
-  }
-  ul li {
-    position: relative;
-    padding-left: 1.4rem;
-    margin-bottom: 0.3rem;
-  }
-  ul li::before {
-    content: "\2022";
-    color: #2563eb;
-    font-weight: bold;
-    position: absolute;
-    left: 0;
-  }
-  .no-bullets li::before { content: none; }
-  .contact-box {
-    margin-top: 2rem;
-    padding: 1.25rem 1.5rem;
-    background: #f0f4ff;
-    border-left: 4px solid #2563eb;
-    border-radius: 3px;
-  }
-  .contact-box p {
-    margin-bottom: 0.25rem;
-  }
-  .phone {
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: #2563eb;
-  }
-  .phone a {
-    color: #2563eb;
-    text-decoration: none;
-  }
-  .phone a:hover {
-    text-decoration: underline;
-  }
-  .fine {
-    font-size: 0.85rem;
-    color: #888;
-    margin-top: 2rem;
-    text-align: center;
-  }
-  @media (max-width: 520px) {
-    .letter { padding: 1.5rem 1.25rem; }
-    h1 { font-size: 1.6rem; }
-  }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pete's Tech Help — Mobile IT Support in Honiton &amp; Exeter</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: #1a1a2e;
+      background: #ffffff;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ===== UTILITY ===== */
+    .container {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .section-pad {
+      padding: 72px 0;
+    }
+    .text-center { text-align: center; }
+
+    /* ===== HEADER / NAV ===== */
+    header {
+      padding: 20px 0;
+      border-bottom: 1px solid #eef2f6;
+      background: #ffffff;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+    header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #2563eb;
+      letter-spacing: -0.03em;
+      text-decoration: none;
+    }
+    .logo span { color: #1a1a2e; }
+    nav a {
+      margin-left: 28px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #4b5563;
+      transition: color 0.2s;
+    }
+    nav a:hover { color: #2563eb; }
+    .nav-cta {
+      background: #2563eb;
+      color: #fff !important;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.85rem;
+    }
+    .nav-cta:hover { background: #1d4ed8 !important; }
+
+    /* ===== HERO ===== */
+    .hero {
+      padding: 96px 0 80px;
+      background: linear-gradient(135deg, #f8faff 0%, #eef4ff 100%);
+    }
+    .hero .container {
+      display: flex;
+      align-items: center;
+      gap: 60px;
+    }
+    .hero-content { flex: 1.2; }
+    .hero-content .badge {
+      display: inline-block;
+      background: #dbeafe;
+      color: #1e40af;
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+    }
+    .hero-content h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.04em;
+      color: #0f172a;
+      margin-bottom: 20px;
+    }
+    .hero-content h1 em {
+      font-style: normal;
+      color: #2563eb;
+    }
+    .hero-content .sub {
+      font-size: 1.15rem;
+      color: #4b5563;
+      max-width: 480px;
+      line-height: 1.7;
+      margin-bottom: 32px;
+    }
+    .hero-buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #2563eb;
+      color: #fff;
+      padding: 14px 32px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-primary:hover { background: #1d4ed8; transform: translateY(-1px); }
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #fff;
+      color: #2563eb;
+      padding: 14px 32px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      border: 2px solid #dbeafe;
+      transition: border-color 0.2s, transform 0.15s;
+    }
+    .btn-secondary:hover { border-color: #2563eb; transform: translateY(-1px); }
+    .hero-visual {
+      flex: 0.8;
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 32px 28px;
+      box-shadow: 0 12px 40px rgba(37,99,235,0.08);
+      border: 1px solid #e8edf5;
+    }
+    .hero-visual p {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #2563eb;
+      margin-bottom: 12px;
+    }
+    .hero-visual .v-list {
+      list-style: none;
+    }
+    .hero-visual .v-list li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 0;
+      border-bottom: 1px solid #f1f5f9;
+      font-size: 0.95rem;
+      color: #334155;
+    }
+    .hero-visual .v-list li:last-child { border-bottom: none; }
+    .hero-visual .v-list li::before {
+      content: "✓";
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 22px;
+      height: 22px;
+      background: #dbeafe;
+      color: #2563eb;
+      border-radius: 50%;
+      font-size: 0.75rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    /* ===== SECTION HEADERS ===== */
+    .section-label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #2563eb;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 8px;
+    }
+    .section-title {
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: #0f172a;
+      margin-bottom: 16px;
+    }
+    .section-desc {
+      font-size: 1.05rem;
+      color: #4b5563;
+      max-width: 600px;
+      line-height: 1.7;
+      margin: 0 auto 48px;
+      text-align: center;
+    }
+
+    /* ===== WHAT I DO ===== */
+    #services { background: #ffffff; }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .service-card {
+      background: #f8faff;
+      border: 1px solid #eef2f6;
+      border-radius: 14px;
+      padding: 28px 24px;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .service-card:hover {
+      border-color: #bfdbfe;
+      box-shadow: 0 4px 16px rgba(37,99,235,0.06);
+    }
+    .service-card .icon {
+      width: 44px;
+      height: 44px;
+      background: #dbeafe;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      margin-bottom: 16px;
+      color: #2563eb;
+    }
+    .service-card h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 8px;
+    }
+    .service-card p {
+      font-size: 0.9rem;
+      color: #4b5563;
+      line-height: 1.6;
+    }
+
+    /* ===== WHAT I DON'T DO ===== */
+    #dont-do {
+      background: #fafbfc;
+    }
+    .dont-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+    }
+    .dont-card {
+      background: #fff;
+      border: 1px solid #eef2f6;
+      border-radius: 12px;
+      padding: 22px 20px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .dont-card .x {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #dc2626;
+      flex-shrink: 0;
+      width: 24px;
+      height: 24px;
+      background: #fef2f2;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .dont-card h4 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #0f172a;
+      margin-bottom: 4px;
+    }
+    .dont-card p {
+      font-size: 0.85rem;
+      color: #6b7280;
+      line-height: 1.5;
+    }
+    .dont-note {
+      margin-top: 28px;
+      text-align: center;
+      font-size: 0.95rem;
+      color: #4b5563;
+      background: #fff;
+      border: 1px solid #eef2f6;
+      border-radius: 12px;
+      padding: 20px 24px;
+    }
+    .dont-note strong { color: #2563eb; }
+
+    /* ===== PRICING ===== */
+    #pricing {
+      background: linear-gradient(135deg, #f8faff 0%, #eef4ff 100%);
+    }
+    .pricing-card {
+      max-width: 480px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 20px;
+      border: 2px solid #dbeafe;
+      padding: 40px 36px;
+      text-align: center;
+      box-shadow: 0 12px 40px rgba(37,99,235,0.08);
+    }
+    .pricing-card .price {
+      font-size: 3rem;
+      font-weight: 800;
+      color: #2563eb;
+      letter-spacing: -0.04em;
+      line-height: 1;
+    }
+    .pricing-card .price small {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #4b5563;
+    }
+    .pricing-card .per {
+      font-size: 0.95rem;
+      color: #6b7280;
+      margin: 6px 0 24px;
+    }
+    .pricing-features {
+      list-style: none;
+      text-align: left;
+      margin-bottom: 28px;
+    }
+    .pricing-features li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 0;
+      border-bottom: 1px solid #f1f5f9;
+      font-size: 0.92rem;
+      color: #334155;
+    }
+    .pricing-features li:last-child { border-bottom: none; }
+    .pricing-features li::before {
+      content: "✓";
+      color: #2563eb;
+      font-weight: 700;
+      font-size: 0.85rem;
+      width: 20px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+    .pricing-features .muted::before {
+      content: "—";
+      color: #9ca3af;
+    }
+    .pricing-features .muted { color: #9ca3af; }
+
+    /* ===== AREAS ===== */
+    #areas { background: #ffffff; }
+    .areas-map {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 14px;
+      margin-bottom: 40px;
+    }
+    .area-tag {
+      background: #f8faff;
+      border: 1px solid #eef2f6;
+      border-radius: 10px;
+      padding: 16px 24px;
+      text-align: center;
+      min-width: 140px;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .area-tag:hover {
+      border-color: #bfdbfe;
+      box-shadow: 0 2px 8px rgba(37,99,235,0.06);
+    }
+    .area-tag .city {
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: #0f172a;
+    }
+    .area-tag .note {
+      font-size: 0.8rem;
+      color: #6b7280;
+      margin-top: 4px;
+    }
+    .area-tag.highlight {
+      background: #2563eb;
+      border-color: #2563eb;
+    }
+    .area-tag.highlight .city { color: #fff; }
+    .area-tag.highlight .note { color: #bfdbfe; }
+
+    /* ===== CONTACT ===== */
+    #contact {
+      background: #0f172a;
+      color: #e2e8f0;
+    }
+    #contact .section-title { color: #ffffff; }
+    #contact .section-desc { color: #94a3b8; }
+    .contact-block {
+      max-width: 520px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .contact-block .big-phone {
+      display: block;
+      font-size: 2.6rem;
+      font-weight: 800;
+      color: #ffffff;
+      text-decoration: none;
+      letter-spacing: -0.03em;
+      margin: 24px 0 12px;
+      transition: color 0.2s;
+    }
+    .contact-block .big-phone:hover { color: #93c5fd; }
+    .contact-block .or-email {
+      font-size: 1rem;
+      color: #94a3b8;
+    }
+    .contact-block .or-email a {
+      color: #93c5fd;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .contact-block .or-email a:hover { text-decoration: underline; }
+    .contact-block .hours {
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid #1e293b;
+      font-size: 0.9rem;
+      color: #64748b;
+    }
+    .contact-block .hours strong { color: #cbd5e1; }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: #0b1120;
+      padding: 32px 0;
+      border-top: 1px solid #1e293b;
+      text-align: center;
+    }
+    footer p {
+      font-size: 0.85rem;
+      color: #475569;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 800px) {
+      .hero { padding: 64px 0 56px; }
+      .hero .container { flex-direction: column; gap: 32px; }
+      .hero-content h1 { font-size: 2.2rem; }
+      .hero-visual { width: 100%; }
+      .section-pad { padding: 52px 0; }
+      .section-title { font-size: 1.7rem; }
+    }
+    @media (max-width: 600px) {
+      header .container { flex-wrap: wrap; gap: 12px; }
+      nav a { margin-left: 0; margin-right: 16px; font-size: 0.82rem; }
+      .nav-cta { margin-left: auto; }
+      .hero-content h1 { font-size: 1.8rem; }
+      .pricing-card { padding: 28px 20px; }
+      .pricing-card .price { font-size: 2.4rem; }
+      .contact-block .big-phone { font-size: 1.8rem; }
+      .services-grid { grid-template-columns: 1fr; }
+      .dont-grid { grid-template-columns: 1fr; }
+      .areas-map { gap: 10px; }
+      .area-tag { min-width: 110px; padding: 12px 16px; }
+    }
+    @media (max-width: 420px) {
+      .hero-content h1 { font-size: 1.5rem; }
+      .btn-primary, .btn-secondary {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  </style>
 </head>
 <body>
 
-<div class="letter">
+  <!-- ===== HEADER ===== -->
+  <header>
+    <div class="container">
+      <a href="#" class="logo">Pete&#8217;s <span>Tech Help</span></a>
+      <nav>
+        <a href="#services">What I Do</a>
+        <a href="#dont-do">What I Don&#8217;t</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#contact" class="nav-cta">Get in Touch</a>
+      </nav>
+    </div>
+  </header>
 
-  <h1>Pete's Tech Help.</h1>
-  <p class="subhead">Mobile IT support in Honiton.</p>
-
-  <p class="intro">I help people who aren't computer people.</p>
-
-  <section>
-    <h2>What I do</h2>
-    <ul>
-      <li>Set up a new phone or tablet</li>
-      <li>Show you how to use email and the internet safely</li>
-      <li>Fix a computer that's "running slow"</li>
-      <li>Help with a printer that won't work</li>
-      <li>Explain what that update message means</li>
-    </ul>
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="badge">&#127758; Mobile IT Support &mdash; East Devon</div>
+        <h1>I help people who <em>aren&#8217;t</em> computer people.</h1>
+        <p class="sub">Friendly, patient, jargon-free help with your tech &mdash; at your home, on your schedule. No subscription, no call centre, no nonsense.</p>
+        <div class="hero-buttons">
+          <a href="#contact" class="btn-primary">&#128222; Call Pete</a>
+          <a href="#services" class="btn-secondary">&#8595; See what I do</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <p>Things I can help with today</p>
+        <ul class="v-list">
+          <li>Set up a new phone or tablet</li>
+          <li>Show you how to use email safely</li>
+          <li>Fix a computer that&#8217;s &#8220;running slow&#8221;</li>
+          <li>Get a printer working</li>
+          <li>Explain those confusing update messages</li>
+        </ul>
+      </div>
+    </div>
   </section>
 
-  <section>
-    <h2>What I don't do</h2>
-    <p>I don't do web hosting, look after servers, or write code. If that's what you need, I'll tell you — and I can probably recommend someone who can.</p>
+  <!-- ===== WHAT I DO ===== -->
+  <section class="section-pad" id="services">
+    <div class="container">
+      <p class="section-label text-center">&#128295; What I do</p>
+      <h2 class="section-title text-center">Real help for real people</h2>
+      <p class="section-desc">
+        I come to your home. We sit down together and sort it out. Here&#8217;s the sort of thing I do most weeks:
+      </p>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="icon">&#128241;</div>
+          <h3>Set up a phone or tablet</h3>
+          <p>New device feeling overwhelming? I&#8217;ll transfer your contacts, photos, and apps &mdash; and show you the basics so you feel in control.</p>
+        </div>
+        <div class="service-card">
+          <div class="icon">&#9993;</div>
+          <h3>Email &amp; internet basics</h3>
+          <p>Set up your email on any device, explain what&#8217;s a scam and what&#8217;s not, and help you browse safely and confidently.</p>
+        </div>
+        <div class="service-card">
+          <div class="icon">&#128187;</div>
+          <h3>Fix a slow computer</h3>
+          <p>If your laptop or desktop has slowed to a crawl, I&#8217;ll find out why and get it running properly again &mdash; no &#8220;reinstall Windows&#8221; shortcuts.</p>
+        </div>
+        <div class="service-card">
+          <div class="icon">&#128424;</div>
+          <h3>Printer problems</h3>
+          <p>Wireless printer won&#8217;t connect? Paper jam you can&#8217;t figure out? I&#8217;ll get it working &mdash; and show you what to do next time.</p>
+        </div>
+        <div class="service-card">
+          <div class="icon">&#128260;</div>
+          <h3>Explain updates &amp; pop-ups</h3>
+          <p>&#8220;Update available&#8221; &mdash; should I click it? What&#8217;s it changing? I&#8217;ll translate the technical messages into plain English.</p>
+        </div>
+        <div class="service-card">
+          <div class="icon">&#128736;</div>
+          <h3>Something else?</h3>
+          <p>If it plugs in, connects to Wi-Fi, or runs on a battery &mdash; give me a call. If I can&#8217;t help, I&#8217;ll tell you honestly and point you to someone who can.</p>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <section>
-    <h2>Prices</h2>
-    <p><strong>&pound;30 an hour.</strong> No call-out fee if you live in Honiton. If you're in Ottery St Mary, Exeter or Sidmouth, I add &pound;10 towards travel.</p>
+  <!-- ===== WHAT I DON'T DO ===== -->
+  <section class="section-pad" id="dont-do">
+    <div class="container">
+      <p class="section-label text-center">&#128683; What I don&#8217;t do</p>
+      <h2 class="section-title text-center">Managing expectations</h2>
+      <p class="section-desc">
+        I&#8217;m here for <em>you</em> &mdash; not for servers, code, or full-scale office IT. Here&#8217;s what&#8217;s outside my lane:
+      </p>
+      <div class="dont-grid">
+        <div class="dont-card">
+          <span class="x">&#10005;</span>
+          <div>
+            <h4>Web hosting &amp; servers</h4>
+            <p>I don&#8217;t run or fix servers, manage hosting accounts, or build websites.</p>
+          </div>
+        </div>
+        <div class="dont-card">
+          <span class="x">&#10005;</span>
+          <div>
+            <h4>Office / business IT</h4>
+            <p>If you need a full office network, business email server, or multi-user setup, I&#8217;ll point you to a specialist.</p>
+          </div>
+        </div>
+        <div class="dont-card">
+          <span class="x">&#10005;</span>
+          <div>
+            <h4>Programming &amp; code</h4>
+            <p>I don&#8217;t write software, build apps, or fix broken code.</p>
+          </div>
+        </div>
+        <div class="dont-card">
+          <span class="x">&#10005;</span>
+          <div>
+            <h4>Repairs &amp; soldering</h4>
+            <p>Hardware repairs, screen replacements, and solder work are best left to a dedicated repair shop.</p>
+          </div>
+        </div>
+      </div>
+      <p class="dont-note">
+        If what you need is in that list, <strong>I&#8217;ll tell you</strong> &mdash; no wasting your time. I can probably recommend someone local who does it.
+      </p>
+    </div>
   </section>
 
-  <section>
-    <h2>Hours</h2>
-    <p>Monday to Thursday, 9&ndash;5.</p>
+  <!-- ===== PRICING ===== -->
+  <section class="section-pad" id="pricing">
+    <div class="container">
+      <p class="section-label text-center">&#128176; Pricing</p>
+      <h2 class="section-title text-center">Simple, fair, upfront</h2>
+      <p class="section-desc">
+        No hidden fees, no monthly subscriptions, no surprises. You only pay for the time I&#8217;m at your house.
+      </p>
+      <div class="pricing-card">
+        <div class="price">&pound;30 <small>/ hour</small></div>
+        <p class="per">That&#8217;s it. One hour minimum, then rounded to the nearest half-hour.</p>
+        <ul class="pricing-features">
+          <li>No call-out fee &mdash; <strong>free in Honiton</strong></li>
+          <li>+ &pound;10 towards travel if you&#8217;re outside Honiton</li>
+          <li>Monday to Thursday, 9&ndash;5</li>
+          <li class="muted">No subscription</li>
+          <li class="muted">No call centre</li>
+        </ul>
+        <a href="#contact" class="btn-primary" style="width:100%;justify-content:center;">&#128222; Book a slot</a>
+      </div>
+    </div>
   </section>
 
-  <div class="contact-box">
-    <p>Call or text Pete:</p>
-    <p class="phone"><a href="tel:+447971123456">07971 123456</a></p>
-  </div>
+  <!-- ===== AREAS ===== -->
+  <section class="section-pad" id="areas">
+    <div class="container">
+      <p class="section-label text-center">&#128205; Where I cover</p>
+      <h2 class="section-title text-center">Based in Honiton, covering East Devon</h2>
+      <p class="section-desc">
+        I&#8217;ll come to your home. If you&#8217;re in Honiton there&#8217;s no travel charge; if you&#8217;re a bit further out I add a small contribution toward fuel.
+      </p>
+      <div class="areas-map">
+        <div class="area-tag highlight">
+          <div class="city">Honiton</div>
+          <div class="note">Free call-out</div>
+        </div>
+        <div class="area-tag">
+          <div class="city">Exeter</div>
+          <div class="note">+&pound;10 travel</div>
+        </div>
+        <div class="area-tag">
+          <div class="city">Ottery St Mary</div>
+          <div class="note">+&pound;10 travel</div>
+        </div>
+        <div class="area-tag">
+          <div class="city">Sidmouth</div>
+          <div class="note">+&pound;10 travel</div>
+        </div>
+      </div>
+      <p class="text-center" style="font-size:0.9rem;color:#6b7280;">
+        Not sure if I cover your village? Just ask &mdash; I&#8217;m happy to travel a bit further for regulars.
+      </p>
+    </div>
+  </section>
 
-  <p class="fine">Based in Honiton &middot; East Devon</p>
+  <!-- ===== CONTACT ===== -->
+  <section class="section-pad" id="contact">
+    <div class="container">
+      <p class="section-label text-center" style="color:#93c5fd;">&#128222; Get in touch</p>
+      <h2 class="section-title text-center">Give Pete a call</h2>
+      <p class="section-desc">
+        Calls, texts, WhatsApp &mdash; whatever works for you. I&#8217;ll pick up or call back the same day.
+      </p>
+      <div class="contact-block">
+        <a href="tel:+447979123456" class="big-phone">07979 123456</a>
+        <p class="or-email">Or email <a href="mailto:pete@petestechhelp.co.uk">pete@petestechhelp.co.uk</a></p>
+        <div class="hours">
+          <strong>Hours:</strong> Monday to Thursday, 9:00&ndash;17:00<br>
+          Answering messages outside those hours &mdash; I&#8217;ll get back to you.
+        </div>
+      </div>
+    </div>
+  </section>
 
-</div>
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Pete&#8217;s Tech Help &middot; Honiton, East Devon &middot; Mobile IT Support</p>
+    </div>
+  </footer>
 
 </body>
 </html>
