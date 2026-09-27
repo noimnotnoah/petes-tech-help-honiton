@@ -74,9 +74,21 @@
     /* ===== HERO ===== */
     .hero {
       padding: 96px 0 80px;
-      background: linear-gradient(135deg, #f8faff 0%, #eef4ff 100%);
+      position: relative;
+      background: #0f172a;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200') center center / cover no-repeat;
+      opacity: 0.35;
+      z-index: 0;
     }
     .hero .container {
+      position: relative;
+      z-index: 1;
       display: flex;
       align-items: center;
       gap: 60px;
@@ -84,8 +96,9 @@
     .hero-content { flex: 1.2; }
     .hero-content .badge {
       display: inline-block;
-      background: #dbeafe;
-      color: #1e40af;
+      background: rgba(37, 99, 235, 0.25);
+      color: #93c5fd;
+      border: 1px solid rgba(147, 197, 253, 0.3);
       font-size: 0.8rem;
       font-weight: 600;
       padding: 6px 14px;
@@ -97,16 +110,16 @@
       font-weight: 800;
       line-height: 1.15;
       letter-spacing: -0.04em;
-      color: #0f172a;
+      color: #ffffff;
       margin-bottom: 20px;
     }
     .hero-content h1 em {
       font-style: normal;
-      color: #2563eb;
+      color: #60a5fa;
     }
     .hero-content .sub {
       font-size: 1.15rem;
-      color: #4b5563;
+      color: #cbd5e1;
       max-width: 480px;
       line-height: 1.7;
       margin-bottom: 32px;
